@@ -22,3 +22,18 @@ winner = None
 name = None
 x_score = 0
 o_score = 0
+
+
+# instructions for the user to play the game
+
+show_instructions = '''
+
+Here are the instructions to play: /n
+- The game displays a 3x3 grid
+- You will start first with the symbol 'X'
+- The computer will be shown as the opposite symbol 'O'
+- Place your symbol typing a number from 1-9 on an empty spot
+- The first among the players who have 3 same symbols in a line,
+  horizontally, vertically or diagonally WINS!
+- If all the 9 spots are full and no one wins it's a tie!
+'''
