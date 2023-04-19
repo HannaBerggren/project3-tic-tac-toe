@@ -33,7 +33,30 @@ Here are the instructions to play: /n
 - You will start first with the symbol 'X'
 - The computer will be shown as the opposite symbol 'O'
 - Place your symbol typing a number from 1-9 on an empty spot
-- The first among the players who have 3 same symbols in a line,
-  horizontally, vertically or diagonally WINS!
-- If all the 9 spots are full and no one wins it's a tie!
+- The first among the players who have 3 of the same symbols in a line,
+  horizontally, vertically or diagonally Wins!
+- If all the 9 spots are full and no one wins, it's a Tie!
 '''
+
+
+def player_name():
+    '''
+    Gets player's name accepting only alphabetical characters
+    '''
+    while True:
+        global name
+        name = input("\nPlease Enter your Name:\n").capitalize()
+
+        if name.isalpha():
+            print("\n")
+            print(f"Hi {name} Welcome to the Game!")
+            print(show_instructions)
+
+            break
+
+        else:
+            print("Oops! Invalid input. Only letters are accepted.")
+            print("\nPlease try again:)")
+
+
+player_name()
