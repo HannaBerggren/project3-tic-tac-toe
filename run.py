@@ -28,7 +28,7 @@ o_score = 0
 
 show_instructions = '''
 
-Here are the instructions to play: /n
+Here are the instructions to play:
 - The game displays a 3x3 grid
 - You will start first with the symbol 'X'
 - The computer will be shown as the opposite symbol 'O'
@@ -49,7 +49,7 @@ def player_name():
 
         if name.isalpha():
             print("\n")
-            print(f"Hi {name} Welcome to the Game!")
+            print(f"Hi {name}, Welcome to the Game!")
             print(show_instructions)
 
             break
@@ -60,3 +60,24 @@ def player_name():
 
 
 player_name()
+
+
+def start_game():
+    '''
+    asks the user to enter 'P' to in order to start the game
+    '''
+    while True:
+        start_game_input = input("Type 'P' to play the game:\n").lower()
+        if start_game_input == 'p':              
+            # making Game Starting statement disappear after a few seconds
+            game_starting = 'Game Starting...'
+            print(game_starting, end="\r")
+            time.sleep(1)
+            print(" " * len(game_starting), end="\r")
+            time.sleep(1)
+            break
+        else:
+            print(f"{start_game_input} Incorrect Input. Enter 'P' to start.")
+
+
+start_game()
