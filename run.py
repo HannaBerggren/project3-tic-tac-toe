@@ -64,7 +64,7 @@ player_name()
 
 def start_game():
     '''
-    asks the user to enter 'P' to in order to start the game
+    asks the user to enter 'P' in order to play the game
     '''
     while True:
         start_game_input = input("Type 'P' to play the game:\n").lower()
@@ -81,3 +81,19 @@ def start_game():
 
 
 start_game()
+
+
+def game_board(board):
+    '''
+    Prints scores at the top and the game board
+    '''
+    print('\n')
+    print(f'Your Score: {x_score:>5}    Computer Score:{o_score:>5}')
+    print('\n')
+
+    print(board[1], "| ", board[2], "| ", board[3], "| ",)
+    print('-'*15)
+    print(board[4], "| ", board[5], "| ", board[6], "| ",)
+    print('-'*15)
+    print(board[7], "| ", board[8], "| ", board[9], "| ",)
+    print('\n')
