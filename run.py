@@ -1,6 +1,7 @@
 from time import sleep # welcome title animation
 import time # game statement to disappear after a few seconds
 import sys # to access functions and variables
+import random # for computer moves
 
 
 # welcome title with animation
@@ -198,7 +199,7 @@ def the_winner(board):
         elif winner == 'O':
             print("Oops, the Computer won!\n")
 
-        return_to_first_page()
+        first_page()
 
     elif check_tie(board):
         game_board(board)
@@ -237,7 +238,7 @@ def first_page():
     '''
     When the game ends the user have a choice if they want to play again or quit 
     '''
-    print("*** Game Ended...*** \n")
+    print("*** Game Ended *** \n")
 
     print("Enter '1' to play again.")
     print('Enter "Q" if you want to quit the game.\n')
@@ -248,7 +249,7 @@ def first_page():
             print(f'Thank you for playing the game {name}.')
             quit()
         elif make_a_choice == '1':
-            print(f'Welcome soon again {name}')
+            print(f'Welcome again {name}')
             start_game()
             reset_board()
             user_choice()
@@ -257,7 +258,7 @@ def first_page():
             print("Invalid selection. Please select '1' or 'q'")
 
 
-# actual game
+# the actual game
 
 def user_choice():
     '''
