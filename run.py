@@ -220,3 +220,14 @@ def check_score():
         o_score += 1
     else:
         return None
+
+
+# clear the board if user want to play again
+
+
+def reset_board():
+    '''
+    Resets the board if user wants to play again
+    '''
+    board.clear()
+    board.extend([' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '])
