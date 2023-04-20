@@ -170,3 +170,39 @@ def change_player():
 
     else:
         player_move = 'X'
+
+
+def computer_move(board):
+    '''
+    Chooses a random computer move after the player's choice
+    '''
+    while player_move == 'O':
+        pc_move = random.randint(1, 9)
+        if board[pc_move] == ' ':
+            board[pc_move] = 'O'
+            change_player()
+
+
+def the_winner(board):
+    '''
+    Checks the winner or a tie,
+    evaluating the possible winning options
+    defined above
+    '''
+    if check_rows(board) or check_diagonal(board) or check_colum(board):
+        check_score()
+        game_board(board)
+
+        if winner == 'X':
+            print("Yeyy, You won!\n")
+        elif winner == 'O':
+            print("Oops, the Computer won!\n")
+
+        return_to_first_page()
+
+    elif check_tie(board):
+        game_board(board)
+        print("It's a Tie!\n")
+        return_to_first_page()
+    else:
+        return None
