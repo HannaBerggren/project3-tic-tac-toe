@@ -1,12 +1,12 @@
-from time import sleep # welcome title animation
-import time # game statement to disappear after a few seconds
-import sys # to access functions and variables
-import random # for computer moves
+from time import sleep  # welcome title animation
+import time  # game statement to disappear after a few seconds
+import sys  # to access functions and variables
+import random  # for computer moves
 
 
 # welcome title with animation
 
-welcome_title = "Welcome to play Tic Tac Toe game!"
+welcome_title = "Welcome to play Tic Tac Toe game!\n"
 
 for x in welcome_title:
     print(x, end='')
@@ -17,7 +17,7 @@ for x in welcome_title:
 # main variables for the gameboard, player's move, winners name and scores
 # to access them inside the functions using the global statement
 
-player_move = 'x'
+player_move = 'X'
 board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 winner = None
 name = None
@@ -29,7 +29,7 @@ o_score = 0
 
 show_instructions = '''
 
-Here are the instructions to play:
+Here are the instructions to play: \n
 - The game displays a 3x3 grid
 - You will start first with the symbol 'X'
 - The computer will be shown as the opposite symbol 'O'
@@ -69,7 +69,7 @@ def start_game():
     '''
     while True:
         start_game_input = input("Type 'P' to play the game:\n").lower()
-        if start_game_input == 'p':              
+        if start_game_input == 'p':
             # making Game Starting statement disappear after a few seconds
             game_starting = 'Game Starting...'
             print(game_starting, end="\r")
@@ -98,7 +98,6 @@ def game_board(board):
     print('-'*15)
     print(board[7], "| ", board[8], "| ", board[9], "| ",)
     print('\n')
-
 
 
 # checking possible winning options
@@ -163,12 +162,12 @@ def check_tie(board):
 
 def change_player():
     '''
-    Changes player after user's move
+    changing player from 'X' to 'O'
     '''
     global player_move
     if player_move == 'X':
         player_move = 'O'
-
+    
     else:
         player_move = 'X'
 
@@ -236,7 +235,8 @@ def reset_board():
 
 def first_page():
     '''
-    When the game ends the user have a choice if they want to play again or quit 
+    When the game ends the user have a choice if they want
+    to play again or quit
     '''
     print("*** Game Ended *** \n")
 
