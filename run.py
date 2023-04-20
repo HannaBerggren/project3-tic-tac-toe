@@ -189,7 +189,7 @@ def the_winner(board):
     evaluating the possible winning options
     defined above
     '''
-    if check_rows(board) or check_diagonal(board) or check_colum(board):
+    if check_rows(board) or check_diagonal(board) or check_column(board):
         check_score()
         game_board(board)
 
@@ -235,7 +235,7 @@ def reset_board():
 
 def first_page():
     '''
-    When the game ends the user have a choise if they want to play again or quit 
+    When the game ends the user have a choice if they want to play again or quit 
     '''
     print("*** Game Ended...*** \n")
 
@@ -255,3 +255,43 @@ def first_page():
 
         else:
             print("Invalid selection. Please select '1' or 'q'")
+
+
+# actual game
+
+def user_choice():
+    '''
+    checks users choice on board
+    '''
+    while True:
+        game_board(board)
+
+        while True:
+
+            try:
+
+                user_input = int(input('Select a spot 1 to 9! :\n'))
+
+                if user_input in range(1, 10):
+                    if board[user_input] == ' ':
+                        board[user_input] = player_move
+                        break
+                    else:
+                        print(
+                            f"The spot {user_input} is taken. "
+                            "Choose another number.")
+                else:
+                    print('Invalid selection. Number must be between 1/9!\n')
+
+            except ValueError:
+                print("Oops! Invalid input. Please enter a valid number:\n")
+
+        the_winner(board)
+        check_tie(board)
+        change_player()
+        computer_move(board)
+        the_winner(board)
+        check_tie(board)
+
+
+user_choice()
