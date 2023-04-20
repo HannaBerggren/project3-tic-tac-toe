@@ -133,3 +133,16 @@ def check_column(board):
     elif board[3] == board[6] == board[9] and board[9] != ' ':
         winner = board[3]
         return True
+
+
+def check_diagonal(board):
+    '''
+    Checks possible diagonal winning options
+    '''
+    global winner
+    if board[1] == board[5] == board[9] and board[9] != ' ':
+        winner = board[1]
+        return True
+    elif board[3] == board[5] == board[7] and board[7] != ' ':
+        winner = board[3]
+        return True
