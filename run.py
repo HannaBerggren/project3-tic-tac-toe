@@ -231,3 +231,27 @@ def reset_board():
     '''
     board.clear()
     board.extend([' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '])
+
+
+def first_page():
+    '''
+    When the game ends the user have a choise if they want to play again or quit 
+    '''
+    print("*** Game Ended...*** \n")
+
+    print("Enter '1' to play again.")
+    print('Enter "Q" if you want to quit the game.\n')
+    while True:
+        global name
+        make_a_choice = input().strip()
+        if make_a_choice.lower() == 'q':
+            print(f'Thank you for playing the game {name}.')
+            quit()
+        elif make_a_choice == '1':
+            print(f'Welcome soon again {name}')
+            start_game()
+            reset_board()
+            user_choice()
+
+        else:
+            print("Invalid selection. Please select '1' or 'q'")
