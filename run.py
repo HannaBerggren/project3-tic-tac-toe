@@ -146,3 +146,27 @@ def check_diagonal(board):
     elif board[3] == board[5] == board[7] and board[7] != ' ':
         winner = board[3]
         return True
+
+
+def check_tie(board):
+    '''
+    Checks for a draw, prints a message stating "It's a Tie".
+    '''
+    if board.count(' ') > 1:
+        return False
+    else:
+        return True
+
+
+# changing player from player 'X' to computer 'O'
+
+def change_player():
+    '''
+    Changes player after user's move
+    '''
+    global player_move
+    if player_move == 'X':
+        player_move = 'O'
+
+    else:
+        player_move = 'X'
