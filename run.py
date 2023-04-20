@@ -206,3 +206,17 @@ def the_winner(board):
         return_to_first_page()
     else:
         return None
+
+
+def check_score():
+    '''
+    Increases the score for whoever wins the game
+    '''
+    if winner == 'X':
+        global x_score
+        x_score += 1
+    elif winner == 'O':
+        global o_score
+        o_score += 1
+    else:
+        return None
