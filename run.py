@@ -65,12 +65,12 @@ player_name()
 
 def start_game():
     '''
-    asks the user to enter 'P' in order to play the game
+    Asks the user to enter 'P' in order to play the game
     '''
     while True:
         start_game_input = input("Type 'P' to play the game:\n").lower()
         if start_game_input == 'p':
-            # making Game Starting statement disappear after a few seconds
+            # making game starting statement disappear after a few seconds
             game_starting = 'Game Starting...'
             print(game_starting, end="\r")
             time.sleep(1)
@@ -150,7 +150,7 @@ def check_diagonal(board):
 
 def check_tie(board):
     '''
-    Checks for a draw, prints a message stating "It's a Tie".
+    Checks for a draw, prints a message saying "It's a Tie".
     '''
     if board.count(' ') > 1:
         return False
@@ -203,7 +203,7 @@ def the_winner(board):
     elif check_tie(board):
         game_board(board)
         print("It's a Tie!\n")
-        return_to_first_page()
+        first_page()
     else:
         return None
 
