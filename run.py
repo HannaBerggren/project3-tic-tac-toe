@@ -167,7 +167,7 @@ def change_player():
     global player_move
     if player_move == 'X':
         player_move = 'O'
-    
+
     else:
         player_move = 'X'
 
